@@ -9,9 +9,7 @@ const delay = require('delay');
 (async () => {
     try {
 
-        const commentFile = await fs.readFileSync('./comment.txt', 'utf-8');
-        const commentArray = commentFile.toString().split("\n");
-        const commentFinal = commentArray[Math.floor(Math.random() * commentArray.length)];
+        
 
         console.log("")
         const likeLimit = readlineSync.question('Masukan limit per comment : ');
@@ -55,6 +53,9 @@ const delay = require('delay');
             let maxId = resultHomePageSharedData.next_max_id;
             do {
                 i++;
+                const commentFile = await fs.readFileSync('./comment.txt', 'utf-8');
+                const commentArray = commentFile.toString().split("\n");
+                const commentFinal = commentArray[Math.floor(Math.random() * commentArray.length)];
 
 
 
