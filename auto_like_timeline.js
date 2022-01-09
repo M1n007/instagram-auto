@@ -19,7 +19,7 @@ const delay = require('delay');
                 const username = readlineSync.question('Masukan username : ');
                 const password = readlineSync.question('Masukan password : ');
                 const result = await InstaClient.login(username, password);
-                if (loginResult.status && loginResult.status == 'fail') {
+                if (result.status && result.status == 'fail') {
                     console.log(`[ ${moment().format("HH:mm:ss")} ] `, chalk.red(`Gagal login : ${result.message}`));
                 }
             }
@@ -27,7 +27,7 @@ const delay = require('delay');
             const username = readlineSync.question('Masukan username : ');
             const password = readlineSync.question('Masukan password : ');
             const result = await InstaClient.login(username, password);
-            if (loginResult.status && loginResult.status == 'fail') {
+            if (result.status && result.status == 'fail') {
                 console.log(`[ ${moment().format("HH:mm:ss")} ] `, chalk.red(`Gagal login : ${result.message}`));
             }
         }
