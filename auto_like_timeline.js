@@ -54,7 +54,7 @@ const delay = require('delay');
 
 
 
-                if (feedForLike[feedForLike.length - 1].media_or_ad.has_liked) {
+                if (feedForLike[0].media_or_ad.has_liked) {
 
                     console.log(`[ ${moment().format("HH:mm:ss")} ] `, chalk.blue('Delayed... to find new post.'));
                     do {
