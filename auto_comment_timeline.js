@@ -51,10 +51,12 @@ const delay = require('delay');
             let feedForLike = resultHomePageSharedData.feed_items;
             let i = 0;
             let maxId = resultHomePageSharedData.next_max_id;
+
+            const commentFile = await fs.readFileSync('./comment.txt', 'utf-8');
+            const commentArray = commentFile.toString().split("\n");
             do {
                 i++;
-                const commentFile = await fs.readFileSync('./comment.txt', 'utf-8');
-                const commentArray = commentFile.toString().split("\n");
+                
                 const commentFinal = commentArray[Math.floor(Math.random() * commentArray.length)];
 
 
